@@ -23,7 +23,10 @@ class ProductRepository extends ServiceEntityRepository
 
     public function findBySearch($value): array
     {
-        /* SELECT */
+        /*  SELECT from product as p
+            Where p.name LIKE $value
+            ORDER BY p.price ASC
+        */
         return $this->createQueryBuilder('p')
             ->where('p.name LIKE :val')
             ->setParameter('val','%'. $value.'%')
