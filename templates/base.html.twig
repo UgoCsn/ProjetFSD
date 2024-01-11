@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}E-com{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+
+    </head>
+    <body>
+        <div class="container">
+            {% block body %}
+                {% block javascripts %}
+                    <script src="{{ asset('js/app.js') }}"></script>
+                {% endblock %}
+                {% block header %}
+                    <section class="header">
+                        <div class="header-container">
+                            <p onclick="redirect()">LOGO</p>
+                            <nav>
+                                <P onclick="toggleMeubles()">Meubles</P>
+                                <p onclick="toggleAccessoires()" >Accessoires</p>
+                            </nav>
+                            <div class="user-panel">
+                                <img onclick="redirectLogin()" class="profile" src="{{asset('images/Profile.svg')}}" alt="Profile button">
+                                <img class="cart" src="{{asset('images/Cart.svg')}}" alt="cart button">
+                            </div>
+                        </div>
+                        <aside id="toggleMeuble">
+                            <h2>
+                                Meubles
+                            </h2>
+
+                            <nav>
+                                <a href="{{ path('app_filter',{'categoryName':'Chaises'}) }}">Chaises</a>
+                                <a href="{{ path('app_filter',{'categoryName':'Fauteuil'}) }}">Fauteuils</a>
+                                <a href="{{ path('app_filter',{'categoryName':'Canapés'}) }}">Canapés</a>
+                                <a href="{{ path('app_filter',{'categoryName':'Bureau'}) }}">Bureaux</a>
+                            </nav>
+                        </aside>
+
+                        <aside id="toggleAccessoires">
+                            <h2>
+                                Accessoires
+                            </h2>
+
+                            <nav>
+                                <a href="{{ path('app_filter',{'categoryName':'Lampes'}) }}">Lampes</a>
+                                <a href="{{ path('app_filter',{'categoryName':'Tapis'}) }}">Tapis</a>
+                                <a href="{{ path('app_filter',{'categoryName':'Cadres'}) }}">Cadres</a>
+                            </nav>
+                        </aside>
+
+                        <div class="background" id="background">
+
+                        </div>
+                    </section>
+                {% endblock %}
+                        {% block main %}
+                        {% endblock %}
+                {% block footer %}
+                    <section class="footer">
+                        <div class="footer-container">
+
+                           <div class="footer-div">
+                               <span>Navigation</span>
+                                <p onclick="redirect()">Home</p>
+                               <p>Tout les produits</p>
+                           </div>
+
+                            <div class="footer-div">
+                                <span>Notre Société</span>
+                                <p onclick="redirect('CGV')">CGV</p>
+                                <p onclick="redirect('CGU')">CGU</p>
+                                <p onclick="redirect('confidential')">Confidentialité</p>
+                                <p onclick="redirect('legal')">Mentions légales</p>
+                            </div>
+
+                            <div class="footer-div">
+                                <span>Réseaux sociaux</span>
+                                <p>Instagram</p>
+                                <p>Facebook</p>
+                                <p>Twitter</p>
+                            </div>
+
+                            <div class="footer-div">
+                                <span>Information</span>
+                                <p>3W Academy</p>
+                                <p>France</p>
+                            </div>
+                            <div class="testcss"></div>
+                        </div>
+                    </section>
+                {% endblock %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

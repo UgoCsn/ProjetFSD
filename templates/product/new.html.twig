@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProductController!{% endblock %}
+
+{% block main %}
+<section class="new-product">
+    <header>
+        <h2>Nouveau Produit</h2>
+    </header>
+    {{ form_start(form) }}
+    <section class="create-form">
+    <div class="name">
+        <h3>Nom du produit</h3>
+        {{ form_row(form.name) }}
+    </div>
+    <div class="desc">
+        <h3>Description du produit</h3>
+        {{ form_row(form.description) }}
+    </div>
+    <div class="category">
+        <h3>Categorie du produit</h3>
+        {{ form_row(form.category) }}
+    </div>
+    <div class="price">
+        <h3>Prix du produit</h3>
+        {{ form_row(form.price) }}
+    </div>
+
+    <div class="image">
+        <h3>Image du produit</h3>
+        {{ form_row(form.image) }}
+    </div>
+    <button type="submit">valider</button>
+    </section>
+    {{ form_end(form) }}
+</section>
+
+
+{% endblock %}

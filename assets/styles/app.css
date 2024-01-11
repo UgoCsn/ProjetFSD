@@ -1,0 +1,557 @@
+
+/*Base ---------------------------- */
+@font-face {
+    font-family: 'poppins-r';
+    src: url('../../public/fonts/Poppins/Poppins-Regular.ttf') format('truetype'),
+    url('../../public/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    /* Ajoutez d'autres déclarations CSS ici, si nécessaire */
+}
+
+body{
+    font-family: 'poppins-r', sans-serif;
+}
+
+.container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #eeeeee;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dd0e21;
+    height: 70px;
+    padding: 0px 20px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+.header p {
+    color: #fff;
+    cursor: pointer;
+}
+
+.header-container input {
+    width: 400px;
+    height: 25px;
+    border: none;
+    border-radius: 25px;
+    padding-left: 25px;
+}
+
+.user-panel {
+    display: flex;
+    color: #fff;
+    gap: 30px;
+}
+
+
+.footer {
+    background-color: #1a1a1a;
+    padding: 100px 0;
+}
+
+.footer-container {
+    display: flex;
+    gap: 12%;
+    justify-content: center;
+}
+
+.footer-container p{
+    margin: 0;
+}
+
+.footer-div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-div span {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.footer-div p {
+    color: #b6b6b6;
+    margin-bottom: 15px;
+}
+
+.footer-div p:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.header aside {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 16%;
+    height: 800px;
+    z-index: 10;
+    background-color: #fff;
+    padding: 25px;
+    padding-left: 50px;
+
+}
+
+.header aside nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.background {
+    display: none;
+    width: 100%;
+    height: 850px;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #00000080;
+    z-index: 8;
+}
+
+.header aside a {
+    color: #000;
+}
+/*FIN ----------------- BASE*/
+
+/*DEBUT ----------------- CGU*/
+.CGU-container {
+    width: 30%;
+    margin: 50px auto;
+}
+/*FIN ----------------- CGU*/
+
+/*DEBUT ----------------- CGV*/
+.CGV-container {
+    width: 30%;
+    margin: 50px auto;
+}
+/*FIN ----------------- CGV*/
+
+/*DEBUT ----------------- CONFIDENTAL*/
+.confidential-container {
+    width: 30%;
+    margin: 50px auto;
+}
+/*FIN ----------------- CONFIDENTAL*/
+
+/*DEBUT ----------------- HOME*/
+.home-container{
+    width: 100%;
+    height: 100vh;
+}
+
+.new-articles-container {
+    width: 100%;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-container article {
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.new-articles,
+.best-articles  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    width: 100%;
+}
+
+.new-articles article {
+    width: 300px;
+    height: 300px;
+}
+
+.new-articles-container h1 {
+    color: #000;
+    margin-bottom: 50px;
+    margin-top: 0;
+}
+
+
+.best-articles-container {
+    width: 100%;
+    height: 350px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.best-articles article {
+    width: 250px;
+    height: 250px;
+}
+
+article img {
+    width: 30%;
+}
+
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.more-article {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    margin: 25px 0;
+    padding: 10px 20px;
+}
+
+/*FIN ----------------- HOME*/
+
+/*DEBUT ----------------- LEGAL*/
+.legal-container {
+    width: 30%;
+    margin: 50px auto;
+}
+
+.legal-container article {
+    height: 50vh;
+}
+/*FIN ----------------- LEGAL*/
+
+/*DEBUT ----------------- LOGIN*/
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container form, .login-container .profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 350px;
+    flex-direction: column;
+    box-shadow: 7px 6px 19px -2px rgba(77,0,0,0.96);
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    gap: 40px;
+}
+
+.login-header {
+    background-color: #dd0e21;
+    width: 350px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.login-header h2{
+    color: #fff;
+}
+
+.login-container input{
+    border: 1px solid #dd0e2175;
+    height: 35px;
+    width: 250px;
+    border-radius: 15px;
+    padding-left: 20px;
+}
+
+.login-container button {
+    height: 35px;
+    width: 170px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+}
+
+.login-container a {
+    height: 35px;
+    width: 170px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.createAccount {
+    color: #dd0e21;
+}
+
+.profile span {
+    color: #000;
+    font-weight: bold;
+}
+
+.profile p {
+    color: #000;
+    font-weight: bold;
+    border: 1px solid #dd0e21;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.profile .username {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+/*FIN ----------------- LOGIN*/
+
+/*DEBUT ----------------- NEW PRODUCT*/
+.new-product {
+    margin: 50px auto;
+    width: 350px;
+    font-family: 'poppins-r', sans-serif;
+    color: #000;
+    background-color: #fff;
+    border-radius: 25px;
+
+}
+.new-product header {
+    background-color: #dd0e21;
+    width: 350px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    color: #fff;
+}
+
+.new-product .create-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    box-shadow: 7px 6px 19px -2px rgba(77,0,0,0.96);
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.new-product label {
+    display: none;
+}
+
+.new-product div input,.new-product div textarea,.new-product div select {
+    border: 1px solid #000;;
+    height: 35px;
+    margin: 0 auto;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.new-product div h3  {
+    margin: 15px 0;
+
+}
+.new-product div   {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+}
+
+.new-product button {
+    height: 35px;
+    width: 170px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.new-product .image input {
+    border: none;
+}
+
+.new-product img {
+    width: 30%;
+}
+
+/*FIN ----------------- NEW PRODUCT*/
+
+/*DEBUT ----------------- DETAIL PRODUCT*/
+.detail-container {
+    display: flex;
+    justify-content: center;
+    margin: 55px auto;
+    height: 50vh;
+
+}
+
+.detail-container article {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    background-color: #fff;
+}
+
+.detail-container aside {
+    width: 30%;
+    margin-left: 5%;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.addCart {
+    height: 35px;
+    width: 170px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+}
+
+.edit-product {
+    background-color: #ec9643;
+    color: #fff;
+    padding: 12px;
+    border-radius: 15px;
+}
+
+.del-product {
+    background-color: #dd0e21;
+    color: #fff;
+    padding: 12px;
+    border-radius: 15px;
+}
+
+.admin-product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 50px;
+}
+
+/*FIN ----------------- DETAIL PRODUCT*/
+
+/*DEBUT -----------------  PRODUCT*/
+.product-container {
+    width: 70%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+}
+
+.product {
+    width: 300px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*FIN -----------------  PRODUCT*/
+
+/*DEBUT ----------------- REGISTER*/
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 350px;
+    flex-direction: column;
+    box-shadow: 7px 6px 19px -2px rgba(77,0,0,0.96);
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    gap: 20px;
+}
+
+.login-header {
+    background-color: #dd0e21;
+    width: 350px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.login-header h2{
+    color: #fff;
+}
+
+.login-container input{
+    border: 1px solid #dd0e2175;
+    height: 35px;
+    width: 250px;
+    border-radius: 15px;
+    padding-left: 20px;
+}
+
+.login-container button {
+    height: 35px;
+    width: 170px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+}
+
+.terms {
+    width: 20px !important;
+}
+
+.haveAccount {
+    color: #dd0e21;
+}
+/*FIN ----------------- REGISTER*/

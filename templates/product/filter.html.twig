@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}filter{% endblock %}
+
+{% block main %}
+    <section class="all-product">
+        <div class="product-container">
+            {% for element in productFilter %}
+                <a href="{{ path('app_detail', {id:element.id})}}">
+                    <article class="product">
+                        <h2>{{ element.name }}</h2>
+                        <img src="{{asset('uploads')}}/{{ element.image }}" alt="image d'un article">
+                        <p>{{ element.description }}</p>
+                        <p>{{ element.price/100 }}€</p>
+                    </article>
+                </a>
+            {% endfor %}
+        </div>
+
+    </section>
+{% endblock %}

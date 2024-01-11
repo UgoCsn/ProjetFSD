@@ -1,0 +1,51 @@
+{# templates/login/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+
+{% block main %}
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+    {% if is_granted('ROLE_USER') %}
+        <section class="login-container">
+            <div class="login-square">
+                <div class="login-header">
+                    <h2>Profil</h2>
+                </div>
+                <div class="profile">
+                    <section class="username">
+                        <span>Nom d'utilisateur : </span>
+                        <p>{{ user.username }}</p>
+                    </section>
+                    <a href="{{ path('app_logout') }}">Logout</a>
+
+
+                </div>
+            </div>
+
+        </section>
+    {% else %}
+        <section class="login-container">
+            <div class="login-square">
+                <div class="login-header">
+                    <h2>Login</h2>
+                </div>
+                <form action="{{ path('app_login') }}" method="post">
+
+                    <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Email">
+
+                    <input type="password" id="password" name="_password" placeholder="Password">
+
+                    {# If you want to control the URL the user is redirected to on success
+        <input type="hidden" name="_target_path" value="/account"> #}
+
+                    <button type="submit">login</button>
+                    <p onclick="redirectRegister()" class="createAccount">Create Account ?</p>
+                </form>
+            </div>
+
+        </section>
+    {% endif %}
+
+
+{% endblock %}

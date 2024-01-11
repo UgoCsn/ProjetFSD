@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block main %}
+
+    <section class="home-container">
+        <div class="new-articles-container">
+            <h1>NOUVEAUTE</h1>
+            <div class="new-articles">
+                {% for element in allProduct|slice(0, 3) %}
+                        <a href="{{ path('app_detail', {id:element.id})}}">
+                            <article class="article">
+                                <h2>{{ element.name }}</h2>
+                                <img src="{{asset('uploads')}}/{{ element.image }}" alt="image d'un article">
+                                <p>{{ element.description }}</p>
+                                <p>{{ element.price/100 }}€</p>
+                            </article>
+                        </a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="best-articles-container">
+            <h2>NOS MEILLEURS VENTES</h2>
+            <div class="best-articles">
+                {% for element in allProduct|slice(0, 5) %}
+                    <a href="{{ path('app_detail', {id:element.id})}}">
+                        <article class="article">
+                            <h3>{{ element.name }}</h3>
+                            <img src="{{asset('uploads')}}/{{ element.image }}" alt="image d'un article">
+                            <p>{{ element.description }}</p>
+                            <p>{{ element.price/100 }}€</p>
+                        </article>
+                    </a>
+                {% endfor %}
+            </div>
+        <a class="more-article" href="{{ path('app_product') }}">Voir tout les articles</a>
+        </div>
+    </section>
+{% endblock %}

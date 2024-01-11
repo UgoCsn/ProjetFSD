@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block main %}
+    <section class="detail-container">
+
+        <article>
+            <img src="{{asset('uploads')}}/{{ product.image }}" alt="image d'un article">
+        </article>
+        <aside>
+            <div>
+                <h2>{{ product.name }}</h2>
+                <p>{{ product.description }}</p>
+                <p>{{ product.price /100}}€</p>
+            </div>
+            <button class="addCart">Ajouter au panier</button>
+            {% if is_granted('ROLE_ADMIN') %}
+                <section class="admin-product">
+                    <a href="{{ path('app_product-edit', {id:product.id})}}" class="edit-product">
+                        <span>Modifier le produit</span>
+
+                    </a>
+                    <a href="{{ path('app_product-delete', {id:product.id})}}" class="del-product">
+                        <span>Supprimer le produit</span>
+                    </a>
+                </section>
+            {% endif %}
+        </aside>
+    </section>
+{% endblock %}
