@@ -133,14 +133,17 @@ class ProductController extends AbstractController
     #[Route('/search/{userSearch}', name: 'app_search')]
     public function search( EntityManagerInterface $em, string $userSearch ) : JsonResponse
     {
+
         if( $userSearch )
         {
-            $searchResult = $em->getRepository(Product::class)->findOneBy(['name'=>$userSearch]); // cherche les produits
+            $searchResult = $em->getRepository(Product::class)->findBySearch($userSearch); // cherche les produits
         }
         else
         {
             $searchResult = $em->getRepository(Product::class)->findAll(); // cherche les produits // tous les produits
+
         }
+
 
         // doc SF : return $this->json($data, $status = 200, $headers = [], $context = []);
 

@@ -11,7 +11,10 @@
         <div class="container">
             {% block body %}
                 {% block javascripts %}
-                    <script src="{{ asset('js/app.js') }}"></script>
+                    <script defer>
+                        let uploadRepository = "{{asset('uploads')}}/"
+                    </script>
+                    <script defer src="{{ asset('js/app.js') }}"></script>
                 {% endblock %}
                 {% block header %}
                     <section class="header">

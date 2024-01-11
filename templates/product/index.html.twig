@@ -8,7 +8,7 @@
         <input id='searchBar' type="text" placeholder="Que cherchez vous ?">
     </div>
     <div class="product-container" id="productsList">
-        {#{% for element in allProduct %}
+        {% for element in allProduct %}
             <a href="{{ path('app_detail', {id:element.id})}}">
                 <article class="product">
                     <h2>{{ element.name }}</h2>
@@ -17,10 +17,14 @@
                     <p>{{ element.price/100 }}€</p>
                 </article>
             </a>
-        {% endfor %}#}
+        {% endfor %}
     </div>
 
 </section>
+{% endblock %}
 
+
+{% block javascripts %}
+    {{ parent() }}
 
 {% endblock %}

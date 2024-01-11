@@ -35,9 +35,10 @@ nav {
 
 .header-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    width: 50%;
+    width: 30%;
+    gap: 30px;
 }
 
 .header p {
@@ -96,6 +97,15 @@ nav {
     cursor: pointer;
 }
 
+@keyframes Aside {
+    0% {
+        left: -450px;
+    }
+    100% {
+        right: 680px;
+    }
+}
+
 .header aside {
     display: none;
     position: absolute;
@@ -107,6 +117,7 @@ nav {
     background-color: #fff;
     padding: 25px;
     padding-left: 50px;
+    animation:Aside 2s ease 0s normal forwards ;
 
 }
 
@@ -118,7 +129,7 @@ nav {
 .background {
     display: none;
     width: 100%;
-    height: 850px;
+    height: 100%;
     position: absolute;
     top: 70px;
     right: 0;
@@ -187,6 +198,7 @@ nav {
 .new-articles article {
     width: 300px;
     height: 300px;
+    justify-content: center;
 }
 
 .new-articles-container h1 {
@@ -208,6 +220,7 @@ nav {
 .best-articles article {
     width: 250px;
     height: 250px;
+    justify-content: center;
 }
 
 article img {
@@ -218,6 +231,7 @@ article img {
 a{
     text-decoration: none;
     color: #000;
+    text-align: center;
 }
 
 .more-article {
@@ -555,3 +569,73 @@ a{
     color: #dd0e21;
 }
 /*FIN ----------------- REGISTER*/
+
+@media (max-width: 490px) {
+    .new-articles-container{
+        height: auto;
+        margin: 50px 0;
+    }
+
+    .new-articles, .best-articles {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .best-articles-container {
+        height: auto;
+    }
+
+    .new-articles article {
+        width: 300px;
+        height: 300px;
+    }
+
+    .best-articles article {
+        width: 300px;
+        height: 300px;
+    }
+
+    .home-container {
+        height: auto;
+    }
+
+    .header aside nav {
+        flex-direction: row;
+    }
+
+    .header aside {
+        width: 92%;
+    }
+
+    .footer-div {
+        margin-bottom: 25px;
+    }
+
+    .footer-container {
+        flex-wrap: wrap;
+    }
+
+    .detail-container aside {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+        margin: 0;
+    }
+
+    .detail-container article {
+        width: 80%;
+        height: 40%;
+        margin: 0 auto;
+    }
+
+    .detail-container {
+        flex-direction: column;
+    }
+
+    .header aside {
+        width: 100%;
+        height: 100px
+    }
+}

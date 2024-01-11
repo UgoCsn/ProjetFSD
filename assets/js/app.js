@@ -1,4 +1,34 @@
+document.querySelector('#searchBar').addEventListener('input', (e) => {
+    let userSearch = e.target.value;
 
+    fetch(`/search/${ userSearch }`)
+        .then( res => res.json() )
+        .then( data => {
+            console.log(data)
+            let productsList = document.querySelector('#productsList')
+            productsList.innerHTML = '';
+
+            for( let i = 0; i < data.length; i++ )
+            {
+                let product = data[i]; // { id: 1, name: 'chaise' }
+
+                let article = document.createElement('article');
+
+                article.classList.add('product');
+
+                article.innerHTML = `
+            <a href="/product/detail/${ product.id }">
+                    <h2>${ product.name }</h2>
+                    <img src="${uploadRepository}${product.image}" alt="image d'un article">
+                    <p>${product.description}</p>
+                    <p>${product.price/100}€</p>
+            </a>
+        `;
+                productsList.append(article);
+            }
+        })
+
+})
 function redirect(link){
     if(link === 'CGU'){
         window.location.href = `http://127.0.0.1:8000/${link}`;
@@ -52,53 +82,6 @@ function redirectRegister() {
     window.location.href = `http://127.0.0.1:8000/register`
 }
 
-    document.querySelector('#searchBar').addEventListener('onChange', (e) => {
 
-
-        let userSearch = e.target.value;
-
-        fetch(`/search/${ userSearch }`)
-            .then( res => res.json() )
-            .then( data => {
-
-                /*
-
-                    data = [
-                        {
-                            name: 'chaise longue',
-                            price: 59,
-                            category: {
-                                name: 'chaises'
-                            }
-                        }
-                    ]
-
-                */
-
-
-                let productsList = document.querySelector('#productsList')
-                productsList.innerHTML = '';
-
-                for( let i = 0; i < data; i++ )
-                {
-                    let product = data[i]; // { id: 1, name: 'chaise' }
-
-                    let article = document.createElement('article');
-
-                    article.classList.add('product', '...');
-
-                    article.innerHTML = `
-                <a href="/product/detail/${ product.id }">
-                        <h2>${ product.name }</h2>
-                        <img src="../../public/uploads/${product.image}" alt="image d'un article">
-                        <p>${product.description}</p>
-                        <p>${product.price/100}€</p>
-                </a>
-            `;
-                    productsList.append(article);
-                }
-            })
-
-    })
 
 
